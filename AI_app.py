@@ -38,6 +38,6 @@ if user_input!=None:
 
 for message in st.session_state.conversation:
   if message["role"] == "user":
-    st.chat_message("user").write(f"{{message['parts'][0]}})
+    st.chat_message("user").write(f"{{message['parts'][0]}}")
   elif message["role"] == "model":
     st.chat_message("ai").write(f"{{message['parts'][0]}}")
