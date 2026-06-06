@@ -21,7 +21,7 @@ if "conversation" not in st.session_state:
 user_input = st.bottom.chat_input("Ask GymAI",key="user_input")
 
 if user_input!=None:
-  st.session_state.conversation.append({{"role":"user","parts":[user_input]}})
+  st.session_state.conversation.append({"role":"user","parts":[user_input]})
 
   context=st.session_state.conversation[-6:]
   instruction=st.session_state.instruction[-1]
@@ -34,7 +34,7 @@ if user_input!=None:
   except Exception as e:
     reply = f"Error: {{str(e)}}"
 
-  st.session_state.conversation.append({{"role": "model", "parts": [reply]}})
+  st.session_state.conversation.append({"role": "model", "parts": [reply]})
 
 for message in st.session_state.conversation:
   if message["role"] == "user":
