@@ -34,7 +34,7 @@ if user_input!=None:
   except Exception as e:
     reply = f"Error: {{str(e)}}"
 
-  st.session_state.conversation.append({{"role": "model", "parts": [reply]}}))
+  st.session_state.conversation.append({{"role": "model", "parts": [reply]}})
 
 for message in st.session_state.conversation:
   if message["role"] == "user":
